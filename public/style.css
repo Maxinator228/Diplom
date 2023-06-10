@@ -1,9 +1,63 @@
+a {
+  text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6, body {
+  margin: 0;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+}
+
+input[type=text], input[type=email] {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 #app {
   width: 100%;
 }
 
 body {
   flex-direction: column;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.wrapper {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+.wrapper header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper {
+  padding: 40px 0 30px;
+}
+.wrapper header nav a {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 0px;
+  border-bottom: 2px solid transparent;
+  color: #8b8b8b;
+  transition: 0.3s;
+}
+.wrapper header nav a:hover {
+  color: #333333;
+  border-bottom: 2px solid #00ca69;
 }
 
 /*# sourceMappingURL=style.css.map */

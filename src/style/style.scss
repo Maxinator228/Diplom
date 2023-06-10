@@ -1,3 +1,5 @@
+@import "default";
+
 #app {
   width: 100%;
 }
@@ -6,6 +8,46 @@ body {
   flex-direction: column;
 }
 
-$black:#333333;
-$darkgray:#333333BF;
-$gray:#8B8B8B;
+$black: #333333;
+$darkgray: #333333bf;
+$gray: #8b8b8b;
+$green: #00ca69;
+
+h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+.wrapper {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+%container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper {
+  padding: 40px 0 30px;
+  header {
+    nav {
+      @extend %container;
+      a {
+        width: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px 0px;
+        border-bottom: 2px solid transparent;
+        color: $gray;
+        transition: 0.3s;
+        &:hover {
+          color: $black;
+          border-bottom: 2px solid $green;
+        }
+      }
+    }
+  }
+}
