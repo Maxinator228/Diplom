@@ -18,6 +18,73 @@ $yellow:#FFC702;
 $orange:#FF5C16;
 $purple: #A93DFF;
 
+@mixin button($color){
+  border: 1px solid $color;
+  color: $color;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  background-color: transparent;
+  transition: 0.2s;
+  width: 60%;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+@mixin activeButton($color){
+  @include button($color);
+  color: $black;
+  cursor: pointer;
+  border: 1px solid $color;
+}
+
+
+.btn{
+  &.yellow{
+    @include button($black);
+    &:hover{
+      @include activeButton($yellow);
+    }
+    &:active{
+      scale: 0.9;
+    }
+  }
+}
+.btn{
+  &.green{
+    @include button($white);
+    &:hover{
+      @include activeButton($black);
+    }
+    &:active{
+      scale: 0.9;
+    }
+  }
+}
+.btn{
+  &.black{
+    @include button($white);
+    &:hover{
+      @include activeButton($black);
+    }
+    &:active{
+      scale: 0.9;
+    }
+  }
+}
+.btn{
+  &.purple{
+    @include button($purple);
+    &:hover{
+      @include activeButton($orange);
+    }
+    &:active{
+      scale: 0.9;
+    }
+  }
+}
+
+
 h1{
   font-weight: 700;
   font-size: 30px;
@@ -72,12 +139,9 @@ h5{
 }
 
 
-.wrapper {
-  padding: 40px 0 30px;
-}
-
 header {
   .wrapper{
+    padding: 40px 0 30px;
     nav {
       @extend %container;
       a {
@@ -103,7 +167,7 @@ header {
 .main{
   margin-top: 65px;
   .wrapper{
-    .title{
+    .main-card{
       background-color: $green;
       padding: 25px 0 50px;
       border-radius: 10px;
@@ -194,3 +258,430 @@ header {
   
 }
 
+.strategy{
+  margin-top: 70px;
+  .title{
+    background-color: $green;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    h1{
+      text-align: center;
+      color: $white;
+    }
+  }
+  .wrapper{
+    p{
+      text-align: center;
+      color: $black;
+    }
+    .strategy-container{
+      @extend %container;
+      margin: 30px 0 50px;
+      .strategy-box{
+        box-sizing: border-box;
+        width: 24%;
+        height: 184px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background-color: $white;
+        border: 1px solid $lightgray;
+        padding: 20px;
+      }
+    }
+    h2{
+      text-align: center;
+      color: $black;
+    }
+    .years-container{
+      @extend %container;
+      margin-top: 50px;
+      .past-years{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 30px 10px;
+        .h2-box{
+          display: block;
+          margin: 0 auto;
+          justify-content: center;
+          padding: 5px 30px;
+          background-color: $green;
+          border-radius: 10px;
+          width: 15%;
+          h2{
+            color: $white;
+          }
+        }
+        h2{
+          margin: 10px 0;
+          color: $green;
+          
+        }
+        p{
+          color: $green;
+        }
+      }
+      .new-years{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 30px 10px;
+        .h2-box{
+          display: block;
+          margin: 0 auto;
+          justify-content: center;
+          padding: 5px 30px;
+          background-color: $black;
+          border-radius: 10px;
+          width: 15%;
+          h2{
+            color: $white;
+          }
+        }
+        h2{
+          margin: 10px 0;
+          color: $black;
+          
+        }
+        p{
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.tariff{
+  margin-top: 50px;
+  .title{
+    background-color: $purple;
+    padding: 20px 0;
+    margin-bottom: 50px;
+    h1{
+      text-align: center;
+      color: $white;
+    }
+  }
+  .wrapper{
+    .tariff-container{
+      @extend %container;
+      margin-bottom: 50px;
+      .tariff-title{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .h3-line{
+          border-bottom: 1px solid $lightgray;
+          padding: 0px 0px 10px 0;
+          h3{
+            color: $black;
+          }
+        }
+        h3{
+          color: $black;
+        }
+      }
+      .tariff-card{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        .h3-box{
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          background-color: $green;
+          padding: 10px;
+          border-radius: 10px 10px 0px 0px;
+          margin-bottom: 10px;
+          h3{
+            color: $white;
+          }
+        }
+        .p-line{
+          width: 100%;
+          border-bottom: 1px solid $lightgray;
+          padding: 0px 0px 10px 0;
+          display: flex;
+          justify-content: center;
+          p{
+            color: $black;
+          }
+        }
+        p{
+          color: $black;
+        }
+        .btn.yellow{
+          background-color: $yellow;
+          border: none;
+        }
+      }
+    }
+    .custom-tariff{
+      background-color: $green;
+      padding: 30px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      h1{
+        color: $white;
+        text-align: center;
+      }
+      .input-container{
+        @extend %container;
+        p{
+          color: $white;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .input-box{
+          width: 30%;
+          input{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            width: 92%;
+            padding: 10px;
+            border-bottom: 1px solid $white;
+            font-weight: 500;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            color: $white;
+          }
+        }
+      }
+      .btn.green{
+        width: 30%;
+        display: block;
+        margin: 0 auto;
+        font-size: 20px;
+      }
+    }
+    #end{
+      margin-top: 30px;
+      color: $black;
+    }
+  }
+}
+
+.contacts{
+  margin-top: 50px;
+  .title{
+    background-color: $black;
+    padding: 20px 0;
+    margin-bottom: 50px;
+    h1{
+      text-align: center;
+      color: $white;
+    }
+  }
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{
+      color: $black;
+      text-align: center;
+    }
+    .container{
+      margin-top: 50px;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 30px;
+      background-color: $white;
+      border: 1px solid $black;
+      border-radius: 20px;
+      .contact-methods{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+        p{
+          width: 100%;
+          cursor: pointer;
+          padding: 0 0 10px 0;
+          border-bottom: 1px solid $lightgray;
+          color: $lightgray;
+          transition: 0.3s;
+          &:hover{
+            color: $orange;
+            border-bottom: 1px solid $orange;
+          }
+        }
+      }
+      .input-container{
+        @extend %container;
+        justify-content: flex-start;
+        gap: 10px;
+        border: 1px solid $black;
+        border-radius: 6px;
+        .em-svg{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $black;
+          padding: 16px 13px;
+        }
+        .tel-svg{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $black;
+          padding: 16px;
+        }
+        input{
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          color: $black;
+        }
+        textarea{
+          padding: 20px 10px 40px;
+          width: 100%;
+          border: none;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          color: $black;
+        }
+      }
+      .btn.yellow{
+        width: 100%;
+        background-color: $yellow;
+        border: none;
+        font-size: 20px;
+      }
+    }
+  }
+  
+}
+
+.products{
+  margin-top: 100px;
+  h1{
+    color: $black;
+    text-align: center;
+  }
+  .wrapper{
+    margin-top: 50px;
+    .products-container{
+      @extend %container;
+      #green{
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 10px;
+        background-color: $green;
+        h1{
+          margin: 50px 0;
+          color: $white;
+        }
+        h3{
+          color: $white;
+          text-align: center;
+        }
+        .btn.green{
+          width: 100%;
+          font-size: 20px;
+        }
+      }
+      #black{
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 10px;
+        background-color: $black;
+        h1{
+          margin: 50px 0;
+          color: $white;
+        }
+        h3{
+          color: $white;
+          text-align: center;
+        }
+        .btn.black{
+          width: 100%;
+          font-size: 20px;
+          &:hover{
+            background-color: $white;
+            color: $black;
+          }
+        }
+      }
+      #purple{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 10px;
+        background-color: $purple;
+        h1{
+          margin: 50px 0;
+          color: $white;
+        }
+        h3{
+          color: $white;
+          text-align: center;
+        }
+        .btn.purple{
+          width: 100%;
+          color:$white;
+          font-size: 20px;
+          border: 1px solid $white;
+          &:hover{
+            background-color: $orange;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer{
+  margin-top: 80px;
+  background-color: $yellow;
+  padding: 30px 0;
+  .wrapper{
+    @extend %container;
+    nav{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      a{
+        color: $black;
+        transition: 0.3s;
+        &:hover{
+          color: $purple;
+        }
+      }
+    }
+    .circle{
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $black;
+      h4{
+        color: $white;
+      }
+    }
+  }
+}
