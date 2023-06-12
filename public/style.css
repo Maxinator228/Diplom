@@ -439,7 +439,7 @@ header .wrapper nav a:hover {
 .tariff .wrapper .tariff-container .tariff-title {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .tariff .wrapper .tariff-container .tariff-title .h3-line {
   border-bottom: 1px solid #D4D4D4;
@@ -456,7 +456,7 @@ header .wrapper nav a:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .tariff .wrapper .tariff-container .tariff-card .h3-box {
   width: 100%;
