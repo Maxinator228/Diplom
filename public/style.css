@@ -11,10 +11,16 @@ p, h1, h2, h3, h4, h5, h6, body {
   background-color: transparent;
 }
 
-input[type=text], input[type=email] {
+input[type=text], input[type=email], input[type=number] {
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #app {
@@ -497,10 +503,10 @@ header .wrapper nav a:hover {
   text-align: center;
   margin-bottom: 20px;
 }
-.tariff .wrapper .custom-tariff .input-container .input-box {
+.tariff .wrapper .custom-tariff .input-container .input-block {
   width: 30%;
 }
-.tariff .wrapper .custom-tariff .input-container .input-box input {
+.tariff .wrapper .custom-tariff .input-container .input-block input, .tariff .wrapper .custom-tariff .input-container .input-block input[type=number] {
   text-align: center;
   display: flex;
   align-items: center;
